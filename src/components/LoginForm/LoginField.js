@@ -8,20 +8,27 @@ class LoginField extends Component {
   state = {
     pristine: true,
     valid: null,
-    checked: false
+    checked: false,
+    validEmail: true
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ pristine: false, valid: e.target.value.length });
   }
 
-  handleChecked = (e) => {
+  handleChecked = e => {
     this.setState({ checked: e.target.checked });
   }
+
 
   render(){
     const { label, glyph, model, checkbox } = this.props;
     const { pristine, valid } = this.state;
+    const validateEmail = val => {
+      if(model !== '.email'){
+         this.setState({validEmail: val && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)})
+      }
+    }
     return(
       <div className="LoginField field">
         <FormGroup>
@@ -33,12 +40,11 @@ class LoginField extends Component {
             <Control.text
               model={model}
               type={model === '.passwort' && !this.state.checked ? 'password' : 'text'}
-              required
               validators={{
-                // maxLength: (val) => val.length < 15,
-                required: val => val && val.length
+                valueMissing: val => val && val.length,
+                validateEmail
               }}
-              validateOn="change"
+              validateOn="submit"
               onChange={this.handleChange}
               className={`LoginField-input form-control ${pristine || valid ? '' : 'LoginField-input-error'}`}
             />
@@ -53,7 +59,7 @@ class LoginField extends Component {
             show={!pristine}
             messages={{
               valueMissing: 'muss ausgefüllt werden',
-              // maxLength: 'Must be 15 characters or less'
+              validateEmail: 'Invalid email address',
             }}
           />
         </FormGroup>
