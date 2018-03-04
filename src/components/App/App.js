@@ -4,8 +4,6 @@ import './App.css';
 
 class App extends Component {
   render() {
-    console.log(this.props, this.state)
-
     return (
       <div className="App">
         <LoginForm/>

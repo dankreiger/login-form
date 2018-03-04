@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Control, Form, actions } from 'react-redux-form';
+import { Control, Form } from 'react-redux-form';
 import { FormGroup, Checkbox} from 'react-bootstrap';
 
 import LoginField from './LoginField';
@@ -15,19 +14,9 @@ const fields = [
 
 ]
 
-
 const LoginForm = () => {
-  const postLogin = (values) => {
-    console.log('login')
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('hi')
-    console.log(actions);
-  }
-  return (
-    <Form className="LoginForm" model="user" onSubmit={handleSubmit}>
+  return(
+    <Form className="LoginForm" model="user" onSubmit={v => alert(JSON.stringify(v, null, 4))}>
       {fields.map(field =>
         <LoginField
           key={field.label}
@@ -50,9 +39,9 @@ const LoginForm = () => {
       </Control.reset>
     </Form>
   )
-
 }
 
 
 
-  export default LoginForm;
+
+export default LoginForm;

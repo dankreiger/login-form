@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Control, Errors } from 'react-redux-form';
+import PropTypes from 'prop-types';
 
 import { FormGroup, InputGroup, Glyphicon, ControlLabel, Checkbox } from 'react-bootstrap';
 
@@ -9,26 +10,23 @@ class LoginField extends Component {
     pristine: true,
     valid: null,
     checked: false,
-    validEmail: true
+    currentValue: ''
   }
 
   handleChange = e => {
-    this.setState({ pristine: false, valid: e.target.value.length });
+    this.setState({ pristine: false, valid: e.target.value.length, currentValue: e.target.value });
   }
 
   handleChecked = e => {
     this.setState({ checked: e.target.checked });
   }
 
+  validateEmail = val =>
+    this.props.model !== '.email' || !val.length || (val && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val))
+
 
   render(){
-    const { label, glyph, model, checkbox } = this.props;
-    const { pristine, valid } = this.state;
-    const validateEmail = val => {
-      if(model !== '.email'){
-         this.setState({validEmail: val && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)})
-      }
-    }
+    const { label, glyph, model, checkbox } = this.props, { pristine, valid, currentValue } = this.state;
     return(
       <div className="LoginField field">
         <FormGroup>
@@ -42,11 +40,11 @@ class LoginField extends Component {
               type={model === '.passwort' && !this.state.checked ? 'password' : 'text'}
               validators={{
                 valueMissing: val => val && val.length,
-                validateEmail
+                validEmail: val => this.validateEmail(val)
               }}
-              validateOn="submit"
+              validateOn="change"
               onChange={this.handleChange}
-              className={`LoginField-input form-control ${pristine || valid ? '' : 'LoginField-input-error'}`}
+              className={`LoginField-input form-control ${pristine ? '' : model === '.email' && currentValue.length && this.validateEmail(currentValue) ? '' : valid ? '' : 'LoginField-input-error'}`}
             />
             {checkbox &&
             <InputGroup.Addon>
@@ -59,7 +57,7 @@ class LoginField extends Component {
             show={!pristine}
             messages={{
               valueMissing: 'muss ausgefüllt werden',
-              validateEmail: 'Invalid email address',
+              validEmail: 'Invalid email address',
             }}
           />
         </FormGroup>
@@ -67,7 +65,6 @@ class LoginField extends Component {
     )
   }
 }
-
 
 
 export default LoginField;
