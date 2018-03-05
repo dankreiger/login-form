@@ -133,6 +133,9 @@
   }
 
   .LoginField {
+    &-anzeigen {
+      margin-right: 0.5rem;
+    }
     &-input,
     &-label {
       @extend %formText;

@@ -51,7 +51,7 @@ class LoginField extends Component {
             />
             {checkbox &&
             <InputGroup.Addon>
-              <input type="checkbox" onChange={this.handleChecked}/> Anzeigen
+              <input type="checkbox" className="LoginField-anzeigen" onChange={this.handleChecked}/> Anzeigen
             </InputGroup.Addon>}
           </InputGroup>
           <Errors
