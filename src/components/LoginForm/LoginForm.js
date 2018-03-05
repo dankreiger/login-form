@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Control, Form } from 'react-redux-form';
 import { FormGroup, Checkbox, Button } from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
+import $ from 'jquery';
 
 import LoginField from './LoginField';
 import './LoginForm.css';
@@ -27,15 +28,24 @@ class LoginForm extends Component {
     for (var pair of formData.entries()) {
       if(!pair[1]){
         this.setState({submitFailed: true});
+        this.shakeForm()
         break;
       }
     }
     if(!this.state.tocAccepted) {
+      this.shakeForm();
       this.setState({submitFailed: true});
     } else {
       this.setState({submitFailed: false});
       document.forms[0].submit();
     }
+  }
+
+  shakeForm = () => {
+    $('form').addClass('shakeForm')
+    $('form').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      $('form').delay(200).removeClass('shakeForm');
+    });
   }
 
   render() {
@@ -44,7 +54,7 @@ class LoginForm extends Component {
       <Form
         className="LoginForm"
         model="user"
-        onSubmit={v => alert(`Formular wurde erfolgreich übermittelt\n: ${JSON.stringify(v, null, 4)}`)}>
+        onSubmit={v => alert(`Formular wurde erfolgreich übermittelt\n ${JSON.stringify(v, null, 4)}`)}>
         <Button className="LoginForm-facebook-btn" type="button" >
           <i className="fa fa-facebook"></i>
           Über Facebook registrieren

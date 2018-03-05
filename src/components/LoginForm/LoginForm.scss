@@ -128,6 +128,7 @@
     &-error-message {
       @extend %formText;
       color: #F4B159;
+      transition: 200ms font-size;
     }
   }
 
@@ -177,6 +178,7 @@
       background-color: #F7E2AB;
       margin-top: 0.8rem;
       margin-bottom: -0.8rem;
+      transition: 200ms transform;
       animation: slide-down 0.3s backwards ease-in-out;
       @keyframes slide-down {
         from {
@@ -185,6 +187,9 @@
         }
       }
 
+      .shakeForm & {
+
+      }
       &:after {
         bottom: 100%;
         right: 10%;
@@ -202,3 +207,41 @@
     }
   }
 }
+
+
+// shake form animation
+.shakeForm {
+   -webkit-animation: form_shake 0.4s 1 linear;
+   -moz-animation: form_shake 0.4s 1 linear;
+   -o-animation: form_shake 0.4s 1 linear;
+   .LoginField-error-message {
+     transform: scale(1.01);
+   }
+   .LoginForm-terms-and-conditions-error-message {
+      font-size: 0.88em;
+   }
+ }
+ @-webkit-keyframes form_shake {
+   0% { -webkit-transform: translate(4px); }
+   20% { -webkit-transform: translate(-4px); }
+   40% { -webkit-transform: translate(2px); }
+   60% { -webkit-transform: translate(-2px); }
+   80% { -webkit-transform: translate(1px); }
+   100% { -webkit-transform: translate(0px); }
+ }
+ @-moz-keyframes form_shake {
+   0% { -moz-transform: translate(4px); }
+   20% { -moz-transform: translate(-4px); }
+   40% { -moz-transform: translate(2px); }
+   60% { -moz-transform: translate(-2px); }
+   80% { -moz-transform: translate(1px); }
+   100% { -moz-transform: translate(0px); }
+ }
+ @-o-keyframes form_shake {
+   0% { -o-transform: translate(4px); }
+   20% { -o-transform: translate(-4px); }
+   40% { -o-transform: translate(2px); }
+   60% { -o-transform: translate(-2px); }
+   80% { -o-transform: translate(1px); }
+   100% { -o-origin-transform: translate(0px); }
+ }
