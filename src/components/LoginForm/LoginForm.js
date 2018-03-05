@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Control, Form } from 'react-redux-form';
+import { Form } from 'react-redux-form';
 import { FormGroup, Checkbox, Button } from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
 import $ from 'jquery';
