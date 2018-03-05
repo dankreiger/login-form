@@ -19,6 +19,10 @@ class LoginField extends Component {
     this.setState({ checked: e.target.checked });
   }
 
+  handleFocus = e => {
+    e.target.setSelectionRange(0, e.target.value.length)
+  }
+
   validateEmail = val =>
     this.props.model !== '.email' || !val.length || (val && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val))
 
@@ -27,7 +31,7 @@ class LoginField extends Component {
     const { submitFailed, label, glyph, model, checkbox } = this.props, { pristine, valid } = this.state;
     return(
       <div className="LoginField field">
-        <FormGroup>
+        <FormGroup className="LoginForm-group">
           <ControlLabel className="LoginField-label">{label}</ControlLabel>
           <InputGroup>
             <InputGroup.Addon>
@@ -35,6 +39,7 @@ class LoginField extends Component {
             </InputGroup.Addon>
             <Control.text
               model={model}
+              onFocus={this.handleFocus}
               type={model === '.passwort' && !this.state.checked ? 'password' : 'text'}
               validators={{
                 validateNotEmpty: val => val && val.length,
