@@ -7,10 +7,14 @@
 
 - write Jest tests
 
+***
+
 #### Prerequisites
 
 - Node >= 6
 - npm >= 5.2 or yarn >= 1.3.0
+
+***
 
 #### Getting started
 
