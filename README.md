@@ -28,13 +28,13 @@
 
 3. Install dependencies (yarn or npm)
 
-  **yarn**:
+  - **yarn**:
 
     ```sh
     $ yarn
     ```
 
-  **npm**:
+  - **npm**:
 
     ```sh
     $ npm install
@@ -42,13 +42,13 @@
 
 4. Start server (yarn or npm)
 
-  **yarn**:
+  - **yarn**:
 
     ```sh
     $ yarn start
     ```
 
-  **npm**:
+  - **npm**:
 
     ```sh
     $ npm start
