@@ -124,7 +124,8 @@
 
   &-terms-and-conditions {
     @extend %formText;
-
+    margin-top: 35px;
+    margin-bottom: 20px;
     &-error-message {
       @extend %formText;
       color: #F4B159;
