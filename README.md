@@ -32,29 +32,25 @@
 
 3. Install dependencies (yarn or npm)
 
-  - **yarn**:
-
     ```sh
+    # yarn
     $ yarn
     ```
 
-  - **npm**:
-
     ```sh
+    # npm
     $ npm install
     ```  
 
 4. Start server (yarn or npm)
 
-  - **yarn**:
-
     ```sh
+    # yarn
     $ yarn start
     ```
 
-  - **npm**:
-
     ```sh
+    # npm
     $ npm start
     ```  
 
