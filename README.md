@@ -22,36 +22,36 @@
 
 2. `cd` into project
 
-  ```sh
-  $ cd login-form
-  ```
+    ```sh
+    $ cd login-form
+    ```
 
 3. Install dependencies (yarn or npm)
 
   **yarn**:
 
-  ```sh
-  $ yarn
-  ```
+    ```sh
+    $ yarn
+    ```
 
   **npm**:
 
-  ```sh
-  $ npm install
-  ```  
+    ```sh
+    $ npm install
+    ```  
 
 4. Start server (yarn or npm)
 
   **yarn**:
 
-  ```sh
-  $ yarn start
-  ```
+    ```sh
+    $ yarn start
+    ```
 
   **npm**:
 
-  ```sh
-  $ npm start
-  ```  
+    ```sh
+    $ npm start
+    ```  
 
 5. http://localhost:3000/ will open automatically
