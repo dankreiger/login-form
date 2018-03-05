@@ -7,7 +7,6 @@
 
 .LoginForm {
   flex-basis: 75%;
-  max-height: 100%;
   background-color: #FDFDFD;
   padding: 1.2rem;
   border-radius: 10px;
@@ -177,8 +176,8 @@
       align-items: center;
       width: 50%;
       height: 25px;
-      font-size: 0.8em;
       color: #F4B159;
+      font-size: 0.65em;
       background-color: #F7E2AB;
       margin-top: 0.8rem;
       margin-bottom: -0.8rem;
@@ -190,9 +189,8 @@
           opacity: 0;
         }
       }
-
-      .shakeForm & {
-
+      @media (min-width: 480px) {
+        font-size: 0.8em;
       }
       &:after {
         bottom: 100%;
