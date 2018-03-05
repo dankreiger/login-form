@@ -4,7 +4,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { combineForms } from 'react-redux-form';
-import logger from 'redux-logger';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
@@ -22,7 +21,7 @@ const initialUserState = {
 
 const store = createStore(combineForms({
   user: initialUserState,
-}), applyMiddleware(logger, thunk));
+}), applyMiddleware(thunk));
 
 
 

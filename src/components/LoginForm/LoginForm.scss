@@ -3,7 +3,6 @@
   font-weight: 300;
 }
 
-
 .LoginForm {
   flex-basis: 75%;
   background-color: #FDFDFD;
@@ -14,29 +13,35 @@
       flex-basis: percentage((63 - (10 * $i))/100);
     }
   }
-  // @media (min-width: 660px) {
-  //   flex-basis: 60%;
-  // }
-  // @media (min-width: 770px) {
-  //   flex-basis: 50%;
-  // }
-  // @media (min-width: 880px) {
-  //   flex-basis: 50%;
-  // }
-  // @media (min-width: 990px) {
-  //   flex-basis: 33%;
-  // }
+
   &-terms-and-conditions {
     @extend %formText;
   }
+
   .LoginField {
     &-input,
     &-label {
       @extend %formText;
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+        -webkit-appearance: none;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
     }
 
-    &-input-error {
-      border: 2px solid #E3AB57;
+    &-input {
+      height: auto;
+      padding: 10px;
+
+      &-error {
+        border: 2px solid #E3AB57;
+      }
     }
 
     &-label {
@@ -46,9 +51,9 @@
     &-error-message {
       font-size: 0.8rem;
       color: #E3AB57;
+      background-color: #F7E2AB;
       margin-top: 0.25rem;
       animation: slide-down 0.3s backwards ease-in-out;
-
       @keyframes slide-down {
         from {
           transform: translateY(-50%);
@@ -57,5 +62,4 @@
       }
     }
   }
-
 }

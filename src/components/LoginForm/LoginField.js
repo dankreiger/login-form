@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Control, Errors } from 'react-redux-form';
-import PropTypes from 'prop-types';
 
-import { FormGroup, InputGroup, Glyphicon, ControlLabel, Checkbox } from 'react-bootstrap';
+import { FormGroup, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
 
 
 class LoginField extends Component {
@@ -10,11 +9,10 @@ class LoginField extends Component {
     pristine: true,
     valid: null,
     checked: false,
-    currentValue: ''
   }
 
   handleChange = e => {
-    this.setState({ pristine: false, valid: e.target.value.length, currentValue: e.target.value });
+    this.setState({ pristine: false, valid: this.props.model === '.email' ? e.target.value.length && this.validateEmail(e.target.value) : e.target.value.length });
   }
 
   handleChecked = e => {
@@ -26,7 +24,7 @@ class LoginField extends Component {
 
 
   render(){
-    const { label, glyph, model, checkbox } = this.props, { pristine, valid, currentValue } = this.state;
+    const { submitFailed, label, glyph, model, checkbox } = this.props, { pristine, valid } = this.state;
     return(
       <div className="LoginField field">
         <FormGroup>
@@ -39,12 +37,12 @@ class LoginField extends Component {
               model={model}
               type={model === '.passwort' && !this.state.checked ? 'password' : 'text'}
               validators={{
-                valueMissing: val => val && val.length,
+                validateNotEmpty: val => val && val.length,
                 validEmail: val => this.validateEmail(val)
               }}
               validateOn="change"
               onChange={this.handleChange}
-              className={`LoginField-input form-control ${pristine ? '' : model === '.email' && currentValue.length && this.validateEmail(currentValue) ? '' : valid ? '' : 'LoginField-input-error'}`}
+              className={`LoginField-input form-control ${!submitFailed && pristine ? '' : valid ? '' : 'LoginField-input-error'}`}
             />
             {checkbox &&
             <InputGroup.Addon>
@@ -54,10 +52,10 @@ class LoginField extends Component {
           <Errors
             className="LoginField-error-message"
             model={model}
-            show={!pristine}
+            show={submitFailed || !pristine}
             messages={{
-              valueMissing: 'muss ausgefüllt werden',
-              validEmail: 'Invalid email address',
+              validateNotEmpty: 'muss ausgefüllt werden',
+              validEmail: 'ungültige E-Mail-Adresse',
             }}
           />
         </FormGroup>
