@@ -13,6 +13,69 @@
       flex-basis: percentage((63 - (10 * $i))/100);
     }
   }
+  &-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #739E23;
+    box-shadow: 0px 5px #618120;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+    margin: 0 7px 11px 0;
+    color: #fff;
+    user-select: none;
+    transition: all 100ms ease;
+    width: 100%;
+    height: 45px;
+    font-size: 130%;
+
+    &:hover {
+      background: #618C23;
+      box-shadow: 0px 3px #435100;
+    }
+    &:focus {
+      outline: 0 !important;
+    }
+    &:active {
+      background: #618C23;
+      box-shadow: 0px 0px #717a33;
+      top: 4px;
+      outline: 0 !important;
+    }
+  }
+
+  &-separator {
+    @extend %formText;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    &.background {
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        border-top: 1px solid #dfdfdf;
+        content: "";
+        margin: 0 auto;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 95%;
+        z-index: -1;
+      }
+
+      span {
+        background: #fff;
+        padding: 0 15px;
+      }
+    }
+  }
+
+
 
   &-terms-and-conditions {
     @extend %formText;
@@ -49,16 +112,36 @@
     }
 
     &-error-message {
-      font-size: 0.8rem;
-      color: #E3AB57;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 25px;
+      font-size: 0.8em;
+      color: #F4B159;
       background-color: #F7E2AB;
-      margin-top: 0.25rem;
+      margin-top: 1rem;
       animation: slide-down 0.3s backwards ease-in-out;
       @keyframes slide-down {
         from {
           transform: translateY(-50%);
           opacity: 0;
         }
+      }
+      &:after {
+        bottom: 100%;
+        left: 10%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(247, 226, 171, 0);
+        border-bottom-color: #F7E2AB;
+        border-width: 7px;
+        margin-left: -7px;
       }
     }
   }

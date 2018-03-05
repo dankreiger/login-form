@@ -15,18 +15,26 @@ const fields = [
 ]
 
 class LoginForm extends Component {
-  state = { submitFailed: false }
+  state = { submitFailed: false, tocAccepted: false }
 
   handleClick = e => {
     e.preventDefault();
-    let formData = new FormData(document.forms[0]);
+    let formData = new FormData(document.forms[0]), keys = [];
     for (var pair of formData.entries()) {
+      console.log(pair[0], pair[1])
       if(!pair[1]){
         this.setState({submitFailed: true});
         break;
       }
+      keys.push(pair[0]);
     }
-    document.forms[0].submit();
+    if(keys && !keys.includes('terms-and-conditions')){
+      this.setState({submitFailed: true, tocAccepted: false});
+    } else {
+      this.setState({submitFailed: false, tocAccepted: true});
+
+      document.forms[0].submit();
+    }
   }
 
   render() {
@@ -36,6 +44,7 @@ class LoginForm extends Component {
         model="user"
         onSubmit={v => alert(`Formular wurde erfolgreich übermittelt\n: ${JSON.stringify(v, null, 4)}`)}>
 
+        <div className="LoginForm-separator background"><span>oder ohne facebook</span></div>
         {fields.map(field =>
           <LoginField
             key={field.label}
@@ -47,11 +56,11 @@ class LoginForm extends Component {
           />
         )}
         <FormGroup>
-          <Checkbox className="LoginForm-terms-and-conditions">
+          <Checkbox className="LoginForm-terms-and-conditions" name="terms-and-conditions">
             Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
           </Checkbox>
         </FormGroup>
-        <Button bsStyle='success' type="button" onClick={this.handleClick}>
+        <Button bsStyle='success' className="LoginForm-submit" type="button" onClick={this.handleClick}>
           Submit
         </Button>
       </Form>
