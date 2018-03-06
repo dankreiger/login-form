@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Control, Errors } from 'react-redux-form';
-
 import { FormGroup, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
+import './LoginField.css'
 
 
 class LoginField extends Component {

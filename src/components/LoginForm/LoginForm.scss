@@ -1,13 +1,11 @@
-// using !important for bootstrap overrides
+@import '../../variables.scss';
+@import './partial_styles/LoginForm-animation.scss';
 
-%formText {
-  font-size: 0.86em;
-  font-weight: 300;
-}
+// using !important for bootstrap overrides
 
 .LoginForm {
   flex-basis: 75%;
-  background-color: #FDFDFD;
+  background-color: $formBackgroundWhite;
   padding: 1.2rem;
   border-radius: 10px;
   @for $i from 0 through 3 {
@@ -21,39 +19,22 @@
   }
 
   &-submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #739E23;
-    box-shadow: 0 2px #618120;
-    background-image: none;
-    border: 0;
-    border-radius: 3px;
-    margin: 0 7px 11px 0;
-    color: #fff;
-    user-select: none;
-    transition: all 100ms;
-    width: 100%;
-    height: 45px;
-    font-size: 130%;
-    text-shadow: none !important;
+    @extend %btnStyle;
+    background-color: $btnSubmitBackgroundGreen;
+    box-shadow: 0 2px $btnSubmitBoxShadowGreen;
 
     &:hover {
-      background-color: #618C23;
-      color: #fff;
-      box-shadow: 0 2px #435100;
+      background-color: $btnSubmitHoverActiveBackgroundGreen !important;
+      box-shadow: 0 2px $btnSubmitHoverBoxShadowGreen;
     }
 
     &:focus {
-      color: #fff;
       outline: 0 !important;
     }
 
     &:active {
-      color: #fff !important;
       text-shadow: none !important;
-      background-color: #618C23;
+      background-color: $btnSubmitHoverActiveBackground !important;
       box-shadow: 0 0 #717a33;
       top: 4px;
       outline: 0 !important;
@@ -62,30 +43,30 @@
 
   &-facebook-btn {
     @extend .LoginForm-submit;
-    background-color: #3C5B95;
-    box-shadow: 0 2px #2B0100;
+    background-color: $btnFbBackgroundBlue;
+    box-shadow: 0 2px $btnFbBoxShadowBlue;
     font-size: 110%;
     position: relative;
 
-    i {
+    i.fb-icon {
       position: absolute;
       left: 5%;
       top: 34%;
     }
 
     &:hover {
-      background-color: #2B5C94;
-      box-shadow: 0 2px #2B4B94;
+      background-color: $btnFbHoverBackgroundBlue;
+      box-shadow: 0 2px $btnFbHoverBoxShadowBlue;
     }
 
     &:focus {
       outline: 0 !important;
-      background-color: #3C5B95 !important;
+      background-color: $btnFbBackgroundBlue !important;
     }
 
     &:active {
-      background-color: #3C5B95 !important;
-      box-shadow: 0 0 #2B0100;
+      background-color: $btnFbBackgroundBlue !important;
+      box-shadow: 0 0 $btnFbActiveBoxShadowBlue;
       top: 4px;
       outline: 0 !important;
     }
@@ -93,32 +74,7 @@
 
   &-separator {
     @extend %formText;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-
-    &.background {
-      position: relative;
-      z-index: 1;
-
-      &:before {
-        border-top: 1px solid #dfdfdf;
-        content: "";
-        margin: 0 auto;
-        position: absolute;
-        top: 45%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 95%;
-        z-index: -1;
-      }
-
-      span {
-        background: #fff;
-        padding: 0 15px;
-      }
-    }
+    @extend %separator;
   }
 
   &-terms-and-conditions {
@@ -127,123 +83,22 @@
     margin-bottom: 20px;
     &-error-message {
       @extend %formText;
-      color: #F4B159;
+      color: $errorColorOrange;
       transition: 200ms font-size;
     }
   }
 
-  .LoginField {
-    &-anzeigen {
-      margin-right: 0.5rem;
-    }
-    &-input,
-    &-label {
-      @extend %formText;
+  // shake form animation
+  &.shakeForm {
+    animation: form_shake 0.4s 1 linear;
+    -webkit-animation: form_shake 0.4s 1 linear;
 
-      &:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 1000px white inset;
-        -webkit-appearance: none;
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: none;
-        border: 1px solid #ccc;
-      }
+    .LoginField-error-message {
+      transform: scale(1.01);
     }
 
-    &-input {
-      height: auto;
-      padding: 10px;
-
-      &-error {
-        border: 1px solid #E3AB57;
-        &:focus, &:active {
-          border: 1px solid #E3AB57;
-        }
-      }
-    }
-
-    &-label {
-      text-transform: uppercase;
-    }
-
-    &-error-message {
-      position: absolute;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      height: 25px;
-      color: #F4B159;
-      font-size: 0.65em;
-      background-color: #F7E2AB;
-      margin-top: 0.8rem;
-      margin-bottom: -0.8rem;
-      transition: 200ms transform;
-      animation: slide-down 0.3s backwards ease-in-out;
-      @keyframes slide-down {
-        from {
-          transform: translateY(-50%);
-          opacity: 0;
-        }
-      }
-      @media (min-width: 480px) {
-        font-size: 0.8em;
-      }
-      &:after {
-        bottom: 100%;
-        right: 10%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-color: rgba(247, 226, 171, 0);
-        border-bottom-color: #F7E2AB;
-        border-width: 7px;
-        margin-left: -7px;
-      }
+    .LoginForm-terms-and-conditions-error-message {
+      font-size: 0.88em;
     }
   }
 }
-
-
-// shake form animation
-.shakeForm {
-   -webkit-animation: form_shake 0.4s 1 linear;
-   -moz-animation: form_shake 0.4s 1 linear;
-   -o-animation: form_shake 0.4s 1 linear;
-   .LoginField-error-message {
-     transform: scale(1.01);
-   }
-   .LoginForm-terms-and-conditions-error-message {
-      font-size: 0.88em;
-   }
- }
- @-webkit-keyframes form_shake {
-   0% { -webkit-transform: translate(4px); }
-   20% { -webkit-transform: translate(-4px); }
-   40% { -webkit-transform: translate(2px); }
-   60% { -webkit-transform: translate(-2px); }
-   80% { -webkit-transform: translate(1px); }
-   100% { -webkit-transform: translate(0px); }
- }
- @-moz-keyframes form_shake {
-   0% { -moz-transform: translate(4px); }
-   20% { -moz-transform: translate(-4px); }
-   40% { -moz-transform: translate(2px); }
-   60% { -moz-transform: translate(-2px); }
-   80% { -moz-transform: translate(1px); }
-   100% { -moz-transform: translate(0px); }
- }
- @-o-keyframes form_shake {
-   0% { -o-transform: translate(4px); }
-   20% { -o-transform: translate(-4px); }
-   40% { -o-transform: translate(2px); }
-   60% { -o-transform: translate(-2px); }
-   80% { -o-transform: translate(1px); }
-   100% { -o-origin-transform: translate(0px); }
- }

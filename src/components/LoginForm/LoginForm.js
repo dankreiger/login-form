@@ -56,7 +56,7 @@ class LoginForm extends Component {
         model="user"
         onSubmit={v => alert(`Formular wurde erfolgreich übermittelt\n ${JSON.stringify(v, null, 4)}`)}>
         <Button className="LoginForm-facebook-btn" type="button" >
-          <i className="fa fa-facebook"></i>
+          <i className="fb-icon fa fa-facebook"></i>
           Über Facebook registrieren
         </Button>
         <div className="LoginForm-separator background"><span>oder ohne facebook</span></div>

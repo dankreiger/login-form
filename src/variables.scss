@@ -1,0 +1,75 @@
+/* form */
+$formBackgroundWhite: #FDFDFD;
+$separatorBorderColor: #DFDFDF;
+
+/* buttons */
+
+/*** facebook ***/
+$btnFbBackgroundBlue: #3C5B95;
+$btnFbBoxShadowBlue: #2B0100;
+$btnFbHoverBackgroundBlue: #2B5C94;
+$btnFbHoverBoxShadowBlue: #2B4B94;
+$btnFbActiveBoxShadowBlue: #2B0100;
+
+/*** submit ***/
+$btnSubmitBackgroundGreen: #739E23;
+$btnSubmitBoxShadowGreen: #618120;
+$btnSubmitHoverActiveBackgroundGreen: #618C23;
+
+
+/* errors */
+$errorBorderOrange: #E3AB57;
+$errorColorOrange: #F4B159;
+$errorBackgroundColorOrange: #F7E2AB;
+
+%formText {
+  font-size: 0.86em;
+  font-weight: 300;
+}
+
+%btnStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-image: none;
+  border: 0;
+  border-radius: 3px;
+  margin: 0 7px 11px 0;
+  color: #fff;
+  user-select: none;
+  transition: all 100ms;
+  width: 100%;
+  height: 45px;
+  font-size: 130%;
+  text-shadow: none !important;
+}
+
+%separator {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+
+  &.background {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      border-top: 1px solid $separatorBorderColor;
+      content: "";
+      margin: 0 auto;
+      position: absolute;
+      top: 45%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 95%;
+      z-index: -1;
+    }
+
+    span {
+      background: $formBackgroundWhite;
+      padding: 0 15px;
+    }
+  }
+}
