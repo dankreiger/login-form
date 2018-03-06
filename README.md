@@ -5,7 +5,7 @@
 
 #### Todo:
 
-- write Jest tests
+- write Jest tests for components + redux
 
 ***
 
