@@ -14,6 +14,9 @@
 - Node >= 6
 - npm >= 5.2 or yarn >= 1.3.0
 
+
+- For Facebook Login, please add your Facebook app ID to the `FacebookLogin` component in `LoginForm.js`
+
 ***
 
 #### Getting started

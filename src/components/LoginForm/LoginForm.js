@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Form } from 'react-redux-form';
 import { FormGroup, Checkbox, Button } from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+
 import $ from 'jquery';
 
 import LoginField from './LoginField';
@@ -56,6 +58,10 @@ class LoginForm extends Component {
     });
   }
 
+  responseFacebook = (response) => {
+    console.log(response);
+  }
+
   render() {
     const {submitFailed, tocAccepted} = this.state;
     return(
@@ -63,10 +69,18 @@ class LoginForm extends Component {
         className="LoginForm"
         model="user"
         onSubmit={v => alert(`Formular wurde erfolgreich übermittelt\n ${JSON.stringify(v, null, 4)}`)}>
-        <Button className="LoginForm-facebook-btn" type="button" >
-          <i className="fb-icon fa fa-facebook"></i>
-          Über Facebook registrieren
-        </Button>
+        <FacebookLogin
+          appId="9999999999999999"
+          autoLoad
+          callback={this.responseFacebook}
+          render={renderProps => (
+            <Button className="LoginForm-facebook-btn" type="button" onClick={renderProps.onClick}>
+              <i className="fb-icon fa fa-facebook"></i>
+              Über Facebook registrieren
+            </Button>
+          )}
+        />
+
         <div className="LoginForm-separator background"><span>oder ohne facebook</span></div>
         {fields.map(field =>
           <LoginField
