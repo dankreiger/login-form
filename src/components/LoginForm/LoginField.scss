@@ -2,8 +2,10 @@
 @import './partial_styles/LoginForm-animation.scss';
 
 .LoginField {
-  &-anzeigen {
-    margin-right: 0.5rem;
+  input[type=checkbox].LoginField-anzeigen {
+    margin-right: 0.2rem;
+    margin-top: -0.1rem;
+    vertical-align: middle;
   }
   &-input,
   &-label {

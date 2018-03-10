@@ -87,6 +87,11 @@
       color: $errorColorOrange;
       transition: 200ms font-size;
     }
+    input[type="checkbox"] {
+      &:focus {
+        outline: 0;
+      }
+    }
   }
 
   // shake form animation
