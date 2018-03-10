@@ -4,11 +4,14 @@
 .LoginForm {
   width: 90%;
   background-color: $formBackgroundWhite;
-  padding: 1.2rem;
+  padding: 1.2rem 0.8rem;
   border-radius: 10px;
   @for $i from 0 through 3 {
     @media (min-width: #{660 + (100 * $i)}px) {
       width: percentage((70 - (10 * $i))/100);
+      padding-left: 0.9rem + $i * 0.1;
+      padding-right: 0.9rem + $i * 0.1;
+
     }
   }
 
