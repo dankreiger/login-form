@@ -2,13 +2,13 @@
 @import './partial_styles/LoginForm-animation.scss';
 
 .LoginForm {
-  flex-basis: 75%;
+  width: 90%;
   background-color: $formBackgroundWhite;
   padding: 1.2rem;
   border-radius: 10px;
   @for $i from 0 through 3 {
     @media (min-width: #{660 + (100 * $i)}px) {
-      flex-basis: percentage((70 - (10 * $i))/100);
+      width: percentage((70 - (10 * $i))/100);
     }
   }
 
@@ -96,7 +96,7 @@
     }
 
     .LoginForm-terms-and-conditions-error-message {
-      font-size: 0.88em;
+      font-size: 0.7em;
     }
   }
 }
