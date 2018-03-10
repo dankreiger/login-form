@@ -24,13 +24,21 @@ class LoginForm extends Component {
   }
   handleClick = e => {
     e.preventDefault();
-    let formData = new FormData(document.forms[0]);
-    for (var pair of formData.entries()) {
-      if(!pair[1]){
-        this.setState({submitFailed: true});
-        this.shakeForm()
-        break;
-      }
+    // // not cross-browser compatible - namely Safari and IE
+    // let formData = new FormData(document.forms[0]);
+    // for (var pair of formData.entries()) {
+    //   if(!pair[1]){
+    //     this.setState({submitFailed: true});
+    //     this.shakeForm()
+    //     break;
+    //   }
+    // }
+
+    // notify user by shaking the form if submission has failed
+    let inputsErrors = document.querySelectorAll('.LoginField-input-error');
+    if(inputsErrors.length){
+      this.setState({submitFailed: true});
+      this.shakeForm();
     }
     if(!this.state.tocAccepted) {
       this.shakeForm();
@@ -80,7 +88,7 @@ class LoginForm extends Component {
             </div>
           }
         </FormGroup>
-        <Button bsStyle='success' className="LoginForm-submit" type="button" onClick={this.handleClick}>
+        <Button className="LoginForm-submit" type="button" onClick={this.handleClick}>
           Submit
         </Button>
       </Form>

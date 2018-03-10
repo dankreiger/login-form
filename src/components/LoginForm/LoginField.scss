@@ -25,6 +25,7 @@
   &-input {
     height: auto;
     padding: 10px;
+    font-size: inherit;
 
     &-error {
       border: 1px solid $errorBorderOrange;
@@ -45,12 +46,11 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 25px;
+    height: 23px;
     color: $errorColorOrange;
     font-size: 0.65em;
     background-color: $errorBackgroundColorOrange;
-    margin-top: 0.8rem;
-    margin-bottom: -0.8rem;
+    margin-top: 0.5rem;
     transition: 200ms transform;
     -webkit-animation: slide-down 0.3s backwards ease-in-out;
     animation: slide-down 0.3s backwards ease-in-out;

@@ -29,9 +29,6 @@ $errorBackgroundColorOrange: #F7E2AB;
 }
 
 %btnStyle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   background-image: none;
   border: 0;
@@ -39,11 +36,15 @@ $errorBackgroundColorOrange: #F7E2AB;
   margin: 0 7px 11px 0;
   color: #fff;
   user-select: none;
-  transition: all 100ms;
+  transition: all 200ms;
   width: 100%;
   height: 45px;
-  font-size: 130%;
-  text-shadow: none !important;
+  font-size: 110%;
+  text-shadow: none;
+  &:hover, &:active, &:focus, &:active:focus {
+    color: #fff;
+    outline: 0;
+  }
 }
 
 %separator {

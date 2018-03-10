@@ -1,8 +1,6 @@
 @import '../../variables.scss';
 @import './partial_styles/LoginForm-animation.scss';
 
-// using !important for bootstrap overrides
-
 .LoginForm {
   flex-basis: 75%;
   background-color: $formBackgroundWhite;
@@ -10,12 +8,13 @@
   border-radius: 10px;
   @for $i from 0 through 3 {
     @media (min-width: #{660 + (100 * $i)}px) {
-      flex-basis: percentage((63 - (10 * $i))/100);
+      flex-basis: percentage((70 - (10 * $i))/100);
     }
   }
 
   &-group {
     position: relative;
+    margin-bottom: 10px;
   }
 
   &-submit {
@@ -24,20 +23,21 @@
     box-shadow: 0 2px $btnSubmitBoxShadowGreen;
 
     &:hover {
-      background-color: $btnSubmitHoverActiveBackgroundGreen !important;
+      background-color: $btnSubmitHoverActiveBackgroundGreen;
       box-shadow: 0 2px $btnSubmitHoverBoxShadowGreen;
     }
 
     &:focus {
-      outline: 0 !important;
+      outline: 0;
+      background-color: $btnSubmitBackgroundGreen;
     }
 
-    &:active {
-      text-shadow: none !important;
-      background-color: $btnSubmitHoverActiveBackgroundGreen !important;
+    &:active, &:active:focus {
+      text-shadow: none;
+      background-color: $btnSubmitHoverActiveBackgroundGreen;
       box-shadow: 0 0 #717a33;
       top: 4px;
-      outline: 0 !important;
+      outline: 0;
     }
   }
 
@@ -45,7 +45,7 @@
     @extend .LoginForm-submit;
     background-color: $btnFbBackgroundBlue;
     box-shadow: 0 2px $btnFbBoxShadowBlue;
-    font-size: 110%;
+    font-size: 90%;
     position: relative;
 
     i.fb-icon {
@@ -60,15 +60,13 @@
     }
 
     &:focus {
-      outline: 0 !important;
-      background-color: $btnFbBackgroundBlue !important;
+      background-color: $btnFbBackgroundBlue;
     }
 
-    &:active {
-      background-color: $btnFbBackgroundBlue !important;
-      box-shadow: 0 0 $btnFbActiveBoxShadowBlue;
+    &:active, &:active:focus {
+      background-color: $btnFbBackgroundBlue;
+      box-shadow: 0 1px $btnFbActiveBoxShadowBlue;
       top: 4px;
-      outline: 0 !important;
     }
   }
 
@@ -79,8 +77,8 @@
 
   &-terms-and-conditions {
     @extend %formText;
-    margin-top: 35px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 5px;
     &-error-message {
       @extend %formText;
       color: $errorColorOrange;
