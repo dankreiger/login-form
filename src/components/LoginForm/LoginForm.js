@@ -24,28 +24,18 @@ class LoginForm extends Component {
   handleChangeChk = e => {
     this.setState({tocAccepted: e.target.checked});
   }
+
   handleClick = e => {
     e.preventDefault();
-    // // not cross-browser compatible - namely Safari and IE
-    // let formData = new FormData(document.forms[0]);
-    // for (var pair of formData.entries()) {
-    //   if(!pair[1]){
-    //     this.setState({submitFailed: true});
-    //     this.shakeForm()
-    //     break;
-    //   }
-    // }
-
     // notify user by shaking the form if submission has failed
+
     let inputsErrors = document.querySelectorAll('.LoginField-input-error');
-    if(inputsErrors.length){
+    console.log(this.state.submitFailed)
+    if(this.state.submitFailed || inputsErrors.length || !this.state.tocAccepted){
       this.setState({submitFailed: true});
       this.shakeForm();
     }
-    if(!this.state.tocAccepted) {
-      this.shakeForm();
-      this.setState({submitFailed: true});
-    } else {
+    else {
       this.setState({submitFailed: false});
       document.forms[0].submit();
     }
