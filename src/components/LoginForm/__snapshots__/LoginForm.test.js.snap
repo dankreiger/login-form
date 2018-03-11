@@ -1,0 +1,622 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginForm />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <t
+          appId="9999999999999999"
+          authType=""
+          autoLoad={true}
+          callback={[Function]}
+          cookie={false}
+          disableMobileRedirect={false}
+          fields="name"
+          isMobile={false}
+          language="en_US"
+          onFailure={null}
+          redirectUri="http://localhost/"
+          render={[Function]}
+          responseType="code"
+          returnScopes={false}
+          scope="public_profile,email"
+          state="facebookdirect"
+          version="2.3"
+          xfbml={false}
+/>,
+        <div
+          className="LoginForm-separator background"
+>
+          <span>
+                    oder ohne facebook
+          </span>
+</div>,
+        Array [
+          <LoginField
+            checkbox={undefined}
+            glyph="user"
+            label="vorname"
+            model=".vorname"
+            submitFailed={false}
+/>,
+          <LoginField
+            checkbox={undefined}
+            glyph="user"
+            label="nachname"
+            model=".nachname"
+            submitFailed={false}
+/>,
+          <LoginField
+            checkbox={undefined}
+            glyph="user"
+            label="mitgliedsname"
+            model=".mitgliedsname"
+            submitFailed={false}
+/>,
+          <LoginField
+            checkbox={undefined}
+            glyph="user"
+            label="email"
+            model=".email"
+            submitFailed={false}
+/>,
+          <LoginField
+            checkbox={true}
+            glyph="user"
+            label="passwort"
+            model=".passwort"
+            submitFailed={false}
+/>,
+        ],
+        <FormGroup
+          bsClass="form-group"
+>
+          <Checkbox
+                    bsClass="checkbox"
+                    className="LoginForm-terms-and-conditions"
+                    disabled={false}
+                    inline={false}
+                    name="terms-and-conditions"
+                    onChange={[Function]}
+                    title=""
+          >
+                    Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
+          </Checkbox>
+</FormGroup>,
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          className="LoginForm-submit"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+>
+          Submit
+</Button>,
+      ],
+      "className": "LoginForm",
+      "model": "user",
+      "onSubmit": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "appId": "9999999999999999",
+          "authType": "",
+          "autoLoad": true,
+          "callback": [Function],
+          "cookie": false,
+          "disableMobileRedirect": false,
+          "fields": "name",
+          "isMobile": false,
+          "language": "en_US",
+          "onFailure": null,
+          "redirectUri": "http://localhost/",
+          "render": [Function],
+          "responseType": "code",
+          "returnScopes": false,
+          "scope": "public_profile,email",
+          "state": "facebookdirect",
+          "version": "2.3",
+          "xfbml": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <span>
+            oder ohne facebook
+</span>,
+          "className": "LoginForm-separator background",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "oder ohne facebook",
+          },
+          "ref": null,
+          "rendered": "oder ohne facebook",
+          "type": "span",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "vorname",
+        "nodeType": "class",
+        "props": Object {
+          "checkbox": undefined,
+          "glyph": "user",
+          "label": "vorname",
+          "model": ".vorname",
+          "submitFailed": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "nachname",
+        "nodeType": "class",
+        "props": Object {
+          "checkbox": undefined,
+          "glyph": "user",
+          "label": "nachname",
+          "model": ".nachname",
+          "submitFailed": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "mitgliedsname",
+        "nodeType": "class",
+        "props": Object {
+          "checkbox": undefined,
+          "glyph": "user",
+          "label": "mitgliedsname",
+          "model": ".mitgliedsname",
+          "submitFailed": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "email",
+        "nodeType": "class",
+        "props": Object {
+          "checkbox": undefined,
+          "glyph": "user",
+          "label": "email",
+          "model": ".email",
+          "submitFailed": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "passwort",
+        "nodeType": "class",
+        "props": Object {
+          "checkbox": true,
+          "glyph": "user",
+          "label": "passwort",
+          "model": ".passwort",
+          "submitFailed": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "form-group",
+          "children": Array [
+            <Checkbox
+              bsClass="checkbox"
+              className="LoginForm-terms-and-conditions"
+              disabled={false}
+              inline={false}
+              name="terms-and-conditions"
+              onChange={[Function]}
+              title=""
+>
+              Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
+</Checkbox>,
+            false,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "checkbox",
+              "children": "Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.",
+              "className": "LoginForm-terms-and-conditions",
+              "disabled": false,
+              "inline": false,
+              "name": "terms-and-conditions",
+              "onChange": [Function],
+              "title": "",
+            },
+            "ref": null,
+            "rendered": "Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.",
+            "type": [Function],
+          },
+          false,
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "active": false,
+          "block": false,
+          "bsClass": "btn",
+          "bsStyle": "default",
+          "children": "Submit",
+          "className": "LoginForm-submit",
+          "disabled": false,
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <t
+            appId="9999999999999999"
+            authType=""
+            autoLoad={true}
+            callback={[Function]}
+            cookie={false}
+            disableMobileRedirect={false}
+            fields="name"
+            isMobile={false}
+            language="en_US"
+            onFailure={null}
+            redirectUri="http://localhost/"
+            render={[Function]}
+            responseType="code"
+            returnScopes={false}
+            scope="public_profile,email"
+            state="facebookdirect"
+            version="2.3"
+            xfbml={false}
+/>,
+          <div
+            className="LoginForm-separator background"
+>
+            <span>
+                        oder ohne facebook
+            </span>
+</div>,
+          Array [
+            <LoginField
+              checkbox={undefined}
+              glyph="user"
+              label="vorname"
+              model=".vorname"
+              submitFailed={false}
+/>,
+            <LoginField
+              checkbox={undefined}
+              glyph="user"
+              label="nachname"
+              model=".nachname"
+              submitFailed={false}
+/>,
+            <LoginField
+              checkbox={undefined}
+              glyph="user"
+              label="mitgliedsname"
+              model=".mitgliedsname"
+              submitFailed={false}
+/>,
+            <LoginField
+              checkbox={undefined}
+              glyph="user"
+              label="email"
+              model=".email"
+              submitFailed={false}
+/>,
+            <LoginField
+              checkbox={true}
+              glyph="user"
+              label="passwort"
+              model=".passwort"
+              submitFailed={false}
+/>,
+          ],
+          <FormGroup
+            bsClass="form-group"
+>
+            <Checkbox
+                        bsClass="checkbox"
+                        className="LoginForm-terms-and-conditions"
+                        disabled={false}
+                        inline={false}
+                        name="terms-and-conditions"
+                        onChange={[Function]}
+                        title=""
+            >
+                        Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
+            </Checkbox>
+</FormGroup>,
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="LoginForm-submit"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+>
+            Submit
+</Button>,
+        ],
+        "className": "LoginForm",
+        "model": "user",
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "appId": "9999999999999999",
+            "authType": "",
+            "autoLoad": true,
+            "callback": [Function],
+            "cookie": false,
+            "disableMobileRedirect": false,
+            "fields": "name",
+            "isMobile": false,
+            "language": "en_US",
+            "onFailure": null,
+            "redirectUri": "http://localhost/",
+            "render": [Function],
+            "responseType": "code",
+            "returnScopes": false,
+            "scope": "public_profile,email",
+            "state": "facebookdirect",
+            "version": "2.3",
+            "xfbml": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span>
+              oder ohne facebook
+</span>,
+            "className": "LoginForm-separator background",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "oder ohne facebook",
+            },
+            "ref": null,
+            "rendered": "oder ohne facebook",
+            "type": "span",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "vorname",
+          "nodeType": "class",
+          "props": Object {
+            "checkbox": undefined,
+            "glyph": "user",
+            "label": "vorname",
+            "model": ".vorname",
+            "submitFailed": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "nachname",
+          "nodeType": "class",
+          "props": Object {
+            "checkbox": undefined,
+            "glyph": "user",
+            "label": "nachname",
+            "model": ".nachname",
+            "submitFailed": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "mitgliedsname",
+          "nodeType": "class",
+          "props": Object {
+            "checkbox": undefined,
+            "glyph": "user",
+            "label": "mitgliedsname",
+            "model": ".mitgliedsname",
+            "submitFailed": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "email",
+          "nodeType": "class",
+          "props": Object {
+            "checkbox": undefined,
+            "glyph": "user",
+            "label": "email",
+            "model": ".email",
+            "submitFailed": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "passwort",
+          "nodeType": "class",
+          "props": Object {
+            "checkbox": true,
+            "glyph": "user",
+            "label": "passwort",
+            "model": ".passwort",
+            "submitFailed": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "form-group",
+            "children": Array [
+              <Checkbox
+                bsClass="checkbox"
+                className="LoginForm-terms-and-conditions"
+                disabled={false}
+                inline={false}
+                name="terms-and-conditions"
+                onChange={[Function]}
+                title=""
+>
+                Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
+</Checkbox>,
+              false,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "checkbox",
+                "children": "Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.",
+                "className": "LoginForm-terms-and-conditions",
+                "disabled": false,
+                "inline": false,
+                "name": "terms-and-conditions",
+                "onChange": [Function],
+                "title": "",
+              },
+              "ref": null,
+              "rendered": "Ich willige in die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.",
+              "type": [Function],
+            },
+            false,
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "active": false,
+            "block": false,
+            "bsClass": "btn",
+            "bsStyle": "default",
+            "children": "Submit",
+            "className": "LoginForm-submit",
+            "disabled": false,
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;

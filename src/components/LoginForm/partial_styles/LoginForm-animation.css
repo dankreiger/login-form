@@ -1,0 +1,28 @@
+/* error message animation */
+@keyframes slide-down {
+  from {
+    transform: translateY(-50%);
+    opacity: 0; } }
+
+@media (min-width: 480px) {
+  font-size: 0.8em; }
+
+@-webkit-keyframes form_shake {
+  0% {
+    -webkit-transform: translate(4.5px);
+    transform: translate(4.5px); }
+  20% {
+    -webkit-transform: translate(-4.5px);
+    transform: translate(-4.5px); }
+  40% {
+    -webkit-transform: translate(2px);
+    transform: translate(2px); }
+  60% {
+    -webkit-transform: translate(-2px);
+    transform: translate(-2px); }
+  80% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px); }
+  100% {
+    -webkit-transform: translate(0px);
+    transform: translate(0px); } }
