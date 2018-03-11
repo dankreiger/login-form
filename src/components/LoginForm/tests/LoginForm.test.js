@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import LoginForm from './LoginForm';
+import LoginForm from '../LoginForm';
 
 const loginform = shallow(<LoginForm />);
 

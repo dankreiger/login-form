@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import LoginField from './LoginField';
+import LoginField from '../LoginField';
 
 const loginfield = shallow(<LoginField glyph='user' />);
 
