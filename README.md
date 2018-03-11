@@ -1,5 +1,6 @@
 ### Login Form
 
+[![Build Status](https://travis-ci.org/dankreiger/login-form.svg?branch=master)](https://travis-ci.org/dankreiger/login-form)
 
 [Live Demo](https://login-form-kreiger.herokuapp.com/)
 
